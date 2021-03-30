@@ -1,3 +1,14 @@
-include ':flutter_module'
 include ':app'
 rootProject.name = "build_flutter_android"
+if (Boolean.parseBoolean(IS_SOURCE)) {
+  println(IS_SOURCE)
+  setBinding(new Binding([gradle: this]))
+  evaluate(new File(
+      settingsDir,
+      '../build_flutter_module/.android/include_flutter.groovy'
+  ))
+  include ':build_flutter_module'
+  project(':build_flutter_module').projectDir = new File('../build_flutter_module')
+} else {
+  include ':flutter_module'
+}
