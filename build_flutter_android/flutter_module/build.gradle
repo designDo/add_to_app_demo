@@ -1,5 +1,13 @@
 apply plugin: 'com.android.library'
 
+String engineVersion = "1.0.0-"
+
+//Copy from flutterSDKPath/bin/internal/engine.version
+File engineVersionFile = file("engine.version")
+engineVersionFile.eachLine { line ->
+  engineVersion += line
+}
+
 android {
   compileSdkVersion 30
 
@@ -28,4 +36,19 @@ dependencies {
   androidTestImplementation 'androidx.test.ext:junit:1.1.2'
   androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
+  //flutter so
+  debugApi "io.flutter:armeabi_v7a_debug:$engineVersion"
+  debugApi "io.flutter:arm64_v8a_debug:$engineVersion"
+  releaseApi "io.flutter:armeabi_v7a_release:$engineVersion"
+  releaseApi "io.flutter:arm64_v8a_release:$engineVersion"
+
+  //flutter embed
+  releaseApi "io.flutter:flutter_embedding_release:$engineVersion"
+  debugApi "io.flutter:flutter_embedding_debug:$engineVersion"
+
+  //other native module
+  debugImplementation 'com.sia.build_flutter_module:flutter_debug:1.0.0'
+  releaseImplementation 'com.sia.build_flutter_module:flutter_release:1.0.0'
+  debugImplementation 'io.flutter.plugins.deviceinfo:device_info_debug:1.0.0'
+  releaseImplementation 'io.flutter.plugins.deviceinfo:device_info_release:1.0.0'
 }
