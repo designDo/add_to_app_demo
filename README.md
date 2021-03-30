@@ -22,4 +22,23 @@ cd ..
 debug模式运行
 
 
-flutter_module添加了一个 engine.version 的文件，远程下载依赖，不需要导入flutter.jar 和 flutter.so
+flutter_module添加了一个 engine.version 的文件，远程下载依赖，不需要导入flutter.jar 和 flutter.so 源文件
+     可以再添加一个 aar-version ，标记当前flutter工程的build版本
+
+build_flutter_module flutter 项目完全没有改动，完美
+
+当打包时资源引入方式：
+1. flutter 工程 build aar --no-debug --no-profile --build-number=xxx
+2. IS_SOURCE=false
+3. ./gradlew build
+4. ./gradlew assembleRelease
+
+当打包时源码引入方式：
+1. IS_SOURCE=true
+2. ./gradlew build
+3. ./gradlew assembleRelease
+
+
+TODO:
+当flutter-plugin不是以 io.flutter.plugin.xxx 包名开头时，源码依赖方式下，插件的原生代码库需要单独进行依赖
+将 mj-embed项目拿进来测试一下
