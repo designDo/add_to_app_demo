@@ -1,2 +1,3 @@
+include ':flutter_module'
 include ':app'
 rootProject.name = "build_flutter_android"
