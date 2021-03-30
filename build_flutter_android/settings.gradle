@@ -1,7 +1,6 @@
 include ':app'
 rootProject.name = "build_flutter_android"
 if (Boolean.parseBoolean(IS_SOURCE)) {
-  println(IS_SOURCE)
   setBinding(new Binding([gradle: this]))
   evaluate(new File(
       settingsDir,
