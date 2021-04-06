@@ -42,7 +42,7 @@ cd build_flutter_android
 直接运行 or
 ./gradlew assembleRelease打包
 ```
-![c7ff56beae0e62dce355bd6f8aee2294.png](evernotecid://F49851C3-93D9-4371-8A45-19BC07DE408C/appyinxiangcom/23203925/ENResource/p10)
+![WeChat27cbe6c4a351a5a7b0069f5d7fa0ec5e.png]
 
 ##### 日常开发
 ```
