@@ -42,7 +42,7 @@ cd build_flutter_android
 直接运行 or
 ./gradlew assembleRelease打包
 ```
-![WeChat27cbe6c4a351a5a7b0069f5d7fa0ec5e.png]
+![release.apk.png](WeChat27cbe6c4a351a5a7b0069f5d7fa0ec5e.png)
 
 ##### 日常开发
 ```
